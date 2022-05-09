@@ -1,0 +1,203 @@
+A MOD APK
+
+1>>>Node js job
+https://novoresume.com/editor/resume/9e59b5f0-b649-11ec-baf6-d9964d79840e
+
+MERN Stack Course 2022 - MongoDB, Express, React and NodeJS. download
+
+1>>>Node js is single threaded, based on event driven , non blocking I/o module which makes nodejs very light and efficient.
+Perfect for building fast and scalable data intensive app.
+Like Data streaming(think YouTube, Netflix), real time chat app, api with nosql behind it and server side web app.
+
+You shouldn’t use node.js for application with heavy server side processing(CPU INTENSIVE) like heavy image manipulation, video conversion, file compression or anything like that. In that case we use Ruby on Rails, PHP, python etc. But there is still solution for this types of application in nodejs but nodejs itself don’t do it.
+Companies like Netflix, uber, eBay, paypal started using nodejs in production. Javascript for entire stack and there is large package manager npm with Huge library of open source package for free. Have large and very active developer community for nodejs development.
+
+2>>>async non blocking code offload heavy work to worked on background and once the work is done, the callback function registered before is used to handle the result. All user accessing same thread as single threaded.
+Callback != asynchronous as passing function in other function is quite common in javascript.
+Get rid of callback hell using promise of es6 or async/await of es8.
+Arrow function does not get its own this keyword and it uses this keyword from parent function called lexical this keyword.
+. In ./ represent dir from which we run node command. Ie represent current working dir.
+\_\_dirname refers to directory in which our script currently executing.
+Secret to know which code only executed once so for many request we can response data read already from file sync at the initial execution of project. So it don’t read for many req and don’t block event loop.
+
+Code bundler like web pack , debugger tool or testing library are dev dependency
+1.2.3=major(breaking change).minor(add new feature, don’t have breaking change, backward compatible).patch(bug fix)
+
+निलम्बित, निर्भिक,
+Most of 3rd party library have support for promises and core node library we need to create promises to use async/await.
+Function for 3rd party library automatically return promise.
+State of promise pending, resolve, reject
+Let’s promisify read file and write file function and they will also return promises.
+
+Endpoint name>>resource>>no http verb
+Login and search don’t have CRUD.
+To make param optional use ?
+Separate route and route handler.
+Express is all about req and res object and we manipulate using middleware.
+Some middleware(body parser(express.Json), logging middleware, setting headers middleware, route handlers)
+
+Middleware stake has order defined in code. Req and res obj go through each middleware and are changed. next() is called.
+Req-res cycle.
+http://expressjs.com/en/resources/middleware.html all middleware
+Mounting the router
+Morgan middleware is logger
+
+BSON=mongodb
+https://www.prisma.io/
+Don’t ever use special char like @% etc in password of cloud atlas
+Mvc separate business, application and presentation logic
+
+https://stackoverflow.com/questions/60721069/nodejs-string-replace-problem-while-filtering. For reg gt gte lt lte
+
+Use nab for node debugger
+Error stack trace. Console.log(err.stack)
+Delete error
+"message": "Cast to ObjectId failed for value \"6255617cee51632c1500dfedee\" (type string) at path \"\_id\" for model \"Tour\""
+
+Fat models and thin controllers concept for separation of concern.
+Jwt are stateless solution for authentication so no need state to persist session state in server so best for rest api as they are stateless.
+Communication must happen in https to protect jwt and passwords
+
+https://www.simplyhired.com/search?q=intern+node+developer&l=remote&mi=100&job=mttlc1qFCVeVZe6LCTxxLtcqYgcDGPGHDaGyTZ8EEcyxwumipW_SpA
+Get remote job in US
+
+https://www.w3schools.com/sql/trysql.asp?filename=trysql_op_or
+
+2>>>another course Nodes
+Visual studio intellicode. Extension
+Global API for node as window API for chrome
+Node documentation globals
+Libuv have binding not only to javascript both other backend language and frameworks.
+.stringfy give string represent to that object
+Non blocking async code like setTimeout
+Task involving network delegated to event loop are done directly in your operating system as os has multiple thread of its own.
+Task involving fs are done in thread pool. There is main thread where every thing runs. The number of thread pool are created and reused so, it saves CPU time for creating and destroying. Only some operation like fs uses thread pool.
+Kernel is really good at talking to other computer in the network on its own. So for must async operation thread pool is skipped to save CPU valuable time.
+Non blocking I/o async task for blocking code.
+Event loop also help run callback. Its actually loops the async task.
+Callback queue, phases of event loop for different types of operation with each phase having there own call back executed during that phase(look img with high priority timer phase and I/o phase and so on), callback for setTimeout goes in timer queue. Timer queue(setTimeout, setImmediate, setInterval).
+Node handle many request delegating without crashing.
+Node is not good at video processing and machine learning.
+Dealing with event called observer design pattern. For every event in programming like db, mouse event etc use this pattern.
+Call back function, event module,
+Require function we use common js built in 2009, use ECMA6 script module.
+Node caches the module once required or imported so it don’t run if same module imported twice. And lives in require.cache object.
+package= collection of modules eg npm package.
+Semantic versoning major.minor.patch
+Semver.npmjs.com
+Npm audit, npm audit fix
+Stellar flux gives whether planet habitable.
+Could we live on Kepler-442b?
+We don’t have body on get and delete http request when requesting node API.
+How http request and response looks like, see img ?
+_00 status code responses eg 200 are generic one and 201 are specific one specific to post and put for 201.
+Same origin policy with exception that request form server a to server b that don’t leak data to a allowed eg if you submit data to b. But cannot fetch to going to console of a. CORS=cross origin resource sharing. Look response header access-control-allow-origin: _
+Req is readable stream and response is writeable stream. req.pipe(res). As readableStream.pipe(WriteableStream)
+Buffer byte object need to convert to string.
+Postman vs insomnia : you use insomnia
+Look middleware image.
+App.use((req, res, next)=>{}). Middleware similar to route handler. Next is function to call next middleware . If you don’t call next function request will timeout.
+Make own middleware or built in middleware.
+MVC split.
+RESTful API’s
+stateless=each req separate not connected
+Rest API ie node is stateless and cacheable
+Templating engines EJS. hbs(handlebars is used here)
+Architecture
+Whitelist using CORS middleware origin for dynamic.
+Built front end to serve in single server as in node.
+Logging log registering middleware Morgan middleware. Streams logs to… can full up space very fast. Use combined format to log reading doc used by apache. Put this middle after security related middleware(eg CORS) and before all other middleware.
+Alt to js object use map’s best and flexible.
+Division of responsibility between model and controller.
+Separation of concern.
+You can also have nom package to work with dates. Eg moment
+Lucid chart
+Google API test
+Jest nom package for test also install super-test to test by requesting API with data
+JAMstack
+Round Robin cluster multiple node process using cluster module with fork() function to improve speed. No of process = no of logical core for performance.
+Logical core >physical cores of CPU.
+Can also use load balancer(round robin, randomized static) if we have distributed servers(horizontal scaling). Use cluster module in node.js.
+Npm pm2 tool made using built in cluster module of node js
+npm install pm2 -g
+https://pm2.keymetrics.io/. pm2=process manager 2. It even start your server no need nodemon, no need start command, no need to use any code to create cluster of node processes ie no need to use cluster built in package. Use command to do all operation without writing single code.
+Object relation impedance mismatch for Sql not for no-sql.
+Sometime we need to use many id in url to get more filter, so we send data of filters(id) in body using post methods to get the data rather get method as we cannot send data in get method.
+flatMap
+Nom install dotenv
+.ent file contain secure keys and password shouldn’t be shared.
+To access this key value use process.env
+Gitignore .env file.
+In HTTPS domain name is exposed but not body and specific paths. Require https and need ssl certificate, and key. Use open ssl to create certificate.
+If you have git you should have open ssl installed.
+Helmet middleware download and use for security above all request-response header. It add or change extra header look in network>header in console.
+Authorization sometime called access control different from authentication.
+auth=authentication and authorization.
+Social sign on best option.
+oAuth tokens, API key and JASON web tokens(JWT) are three ways to restrict use of API and to authorize user to use. API request with API key either as query parameter or or included in header. 429 too many request status code for API request cross limit or upgrade by paying.
+JWT token placed as header with authorization: bearer<JWT>
+JWT token is decoded in server side to match signature, can be decoded and encoded using base64.
+Two type of token JWT and opaque token.
+JWT token are encoded and signed with signature but not encrypted.
+Hacker can steal token and access all the data so, https used for JWT token.
+Google itself uses oath if you sign in your gmail account or YouTube login or google account or
+If you want to access
+https://myaccount.google.com/permissions?continue=https%3A%2F%2Fmyaccount.google.com%2Fsecurity%3Fhl%3Den&hl=en
+Go to above to revoke access for some website from google oauth. oAuth or openID helps in single sign on. If if yo sign to medium with google account, all website like YouTube are automatically signed in.
+Middleware passport js
+.env configuration file separate your web logic from config data.
+
+Use only socket.io library rather then other server side and client side different library because socket.io works on both.
+3% browser don’t support socket.io but socket.io give a fallback pulling ie get, post with infinite loop interval with setINTERVAL so, don’t worry.
+We have two git hub repo, socket.io for backend and socket.io-client for front end. Or support socket.io client for other language.
+Socket communication different from http request, client and server socket implementation different because client communicate with one server while.
+Socket.io Uses node event emitter pattern around which nodes core API’s built.
+Socket.emit cheatsheet in docs
+Dent ever use other library for socket operation .
+Use CDN rather download for client browser side for socket.io -client.
+
+3>>>Node(smilgaJohn)
+Node(smilgaJohn)
+-D orr —dave-dev, npx or -g
+Even they access different route or method, they are blocked by previous user running blocking code like nested for loops so use async.
+Nodes async builtin non blocking modules like readfile don’t return promise so, promisify to use .then catch or async await And get rid callbackhell.
+Async-await awaits only as a whole in background still executing immediate fun like console.log, still non blocking don’t confuse.
+Const readf=(path)=>{
+Return new promise((res,rej){
+//readfile code only change return data with resolve(data) and error with reject(error)
+
+})
+}
+
+Writable, readable, duplex, transform, stream extends event emitter. Used for Bir-big file as req big memory, and holding in variable as file read write cannot be good as size of variable in range.
+By default buffer size is 64kb
+Req body = payload, err=400, 401=unauth, content-type(MIME-TYPE): text/html if rendering else application/json if API.
+Rm -rf .git
+Npm I && npm start in command line
+
+Mdn status code. And man mime types google.
+One html req, client req, js, css, svg and other file link on that html so need t create route for all req in vanilla.
+App.get, post, delete, put, use, all, listen
+Res.json()==it stringfies obj, set content type app/json default.
+ssr(server side rendering)=template engine = render.
+Made API but CORS Error.
+Products.map(p=>{})
+.find()
+“Ripen”.startsWith(“R”); gives true
+const str = "Saturday night plans";
+const res = str.startsWith("Sat");
+console.log(res); //> true
+
+In put method if there is no data with id param, send 404. In post if name value from client is empty send 400(bad req)
+
+Server and db connection don’t work in sync. First connect db before listening.
+
+Casting error= syntax doesn’t match to mongoose obj id or we pass wrong job id
+
+Let’s make mongoose error responses more user friendly
+
+BIG PROJECT E_COMMERCE (NODEJS)
+—we will send JWT via cookies.
+—implement rule based authorization
+—what are virtual how to use them
+—mongoldb aggregate pipeline

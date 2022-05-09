@@ -1,0 +1,107 @@
+Etherium
+https://etherscan.io/accounts
+
+YouTube
+5 FREE APPS I CAN'T LIVE WITHOUT!😂💯 | Ishan Sharma #shorts
+Etherium
+The doing transaction don’t specify very large gas limit because if your smart contract have bug, miners can use that to get all gas limit.
+Types of ethereum network public, private and consortium
+Main network or test network , real ether and transaction or fake ether or transaction, main network has network id 1 and other network 2,3,4 respectively
+Main network, ropster, Koran, Rinkeby with network id 1,3,4,5 respectively, ALL ARE PUBLIC NETWORK ie main network and test network are public,
+Private network transaction is cheaper as very small node are there to verify the transaction. Read permission restricted so better security.
+Different ways to Interacting with etherium network: 1>geth(tool Called go ethereal as it is written in golang, its command line interface which converts your computer to ethereal node free tool require large space to sync), 2>metamask(extension, they have node configured using geth, from chrome extension you talk to that node and interact with ethereal network and helps manage multiple account, retrieve your data, manage identities, send and receive ether),3>mist(mist browser or a mist wallet) 4> web3.js(used by developer, if you develop web app and need to pass some data to your smart contract as java script don’t have natively so you as dev use web3 library of js which helps front end talk to ethereal blockchain) //our transaction through metamask are mined by node we use.
+
+answer potato hold energy receive fluid shaft little item enemy garment amused
+
+Account type in ethereal : 1>externally owned account (ether balance, private and public keys associated with ether wallet I have right now) 2>contact account(have code and ether balance associated with them , whenever you deploy contract on ethereal network, contract account is created and associated with that particular contract, if you deploy contract again then new account will be created with the instance of that particular contract, means every contract on ethereal network has account associated with it and has smart contract code and has ether balance, while building crowd funding or lottery smart contract you need an account to hold ether)
+
+Transaction eject consist(nonce increased by 1 for each new transaction, to address receiver wallet address, from address sender wallet address, value ether, data optional, gas price, gas limit),
+
+data field is optional consist byte code or source code of transaction if you are drawing smart contract. Higher gas price faster transaction,
+
+Transaction type: 1>transfer of ether from one party to another(data field empty) 2>creation of smart contract(compiled smart contract in data field) 3>transacting with smart contract(has encoded function arguments in data filled)
+
+Proof of work=lets explore what happens in miner side: hashing is transformation of data in fixed length value(SHA256 in bitcoin network), hash function used in ethereal called ethash, all transaction routed to miner node are assembled by miner node as block, block is group of transaction created by miners, miner node will validate the block by solving complex computational problem, they need to find value of nonce which when combined with data gives certain hash with some criteria that the hash should have definite leading zeros called difficulty number. Here nonce is different from previous data nonce. Once validated this is called proof of work. If difficulty number increases, time to mine increases. Miners are paid approximately 5 ether per block.
+
+Solidity:
+uInt8 for age range 0 to 127 for less gas value. Bool can be used to set flags in smart contract.
+Address data type to hold address
+Struct data type
+Static and dynamic array in solidity
+Function modifier
+
+web3.js, web3j, web3.py
+Ganache is in memory blockchain
+Different ether denomination
+Connect to ethereal network from web3.js code 1> Geth/parity 2> best way infura act like metamask 3>Ganache is in memory blockchain
+To use infura service sign up by going to its website
+Truffle framework
+Truffle boxes are some smart contracts you can modify
+gas cost, gas prise, gas limit
+each opcode has gas cost multply with ether per gas
+various denomination of ether
+
+Ethereum 2
+Account address, private and public key, in ethereal world 1 account is used in all different networks we ever encountered.
+V, r, s are made from sender private key, one way and the three value together used to get his address for legitimacy.
+Immutable block by mining block with some leading zeros(for proof of work), so that one block change need change whole block and change should be replicated to other nodes. token(tx) in blockchain, on token base block chain we have not listing if they have money, only we have listed a send this amount to b whether a has that amount or not so, coinbase in data field is included. With it we build some bitcoin in this air and give it to a to start transaction and include that value of bitcoin given to a by blockchain network to coinable. Hence if we need conformation at a present that a have sufficient amount we move towards blockchain using hash as it connects.
+It is not correct we want to have some leading zeros but it is correct to say that we want to have a hash whose base10 number is smaller than some base 10 number. Ie we are calculating hash that is smaller than some value by changing nonce.
+Block time is the time taken to find nonce value that solve problem. Also there is time for distribution of solution found by one node which is not included in block time.
+In block chain we have block, each block contain transaction haven at specified time solved by a node. Target block time= 15 second. So in real world the number which should be greater than hash is adjusted overtime between block ie increases or decrease to match target time. Number of computer in mining change each time. https://etherscan.io/chart/blocktime ,
+Smart contract like our account instead of controlled by us code is used to control. Contract account also have field like 1>balance in that account, 2>storage(data storage for our contract) and 3>machine code.
+The account which we created on metamask called external accounts. External account are owned by you and I or human being or entity owns. External account is completely decoupled from any individual network with same account address but contract account are only specific to one individual networks and can’t be accessed across networks(need redeploy as new contract account to other network). We can deploy multiple time to one network or multiple network and each time forms new instance. Contract code in our computer behave like class and from instance of that class like class instance when we deploy to etherium blockchain.  
+solidity(.sol), strong typed
+Online code editor remix.
+Storage variable vs local variable
+We do not return data from function that modifies value ie if we don’t use view we don’t return.
+If you define public storage variable in our contract, it automatically create function that return that variable.
+Transaction object.
+For creating contract, to field is blank ie receiver address is blank. so, we can use web 3 and send transaction through it directly and if we leave to field blank then ethereum network try to assume we creating contract and contract is created with empty code. The byte code in data field is left for everyone in the network to read so, no secret. Contract is signed with v, r, s field derived with private key and used to derive public key.
+
+Transferring ie sending money from one person to another modify the data that we store in blockchain, both side balance should be updated after so require transaction. Similarly to deploy contract we submit transaction ie updating data in blockchain and thus deploy contract now have to store in blockchain and there is something that says here is current value of storage variable message and thus updates blockchain. Every time we update any data in blockchain, we submit transaction and should wait to be mined and after completion of transaction it only return transaction hash value but not the return value we manually coded in that function. Data to be updated can be storage variable that is updated by certain function of deployed contract and that changes a blockchain and only return transaction hash. Any time we change any data we submit transaction and need to wait. Set message function have to involve a transaction as it is changing blockchain but get message function doesn’t.
+
+First way to call a function is ‘calling a function’ which cannot modify contract data and run instantly so we can return value from such function and is free to do. Second way is ‘sending transaction to a contract instance that target specific function’ which modify contract data, takes time to execute, return a transaction hash as the id of transaction and we do not get the manually coded return value back, and thus sending transaction to function cost money too. Only we see time taken in public network either main or test public network but not on remix which is local test network. You need to aware your development environment is different from real environment which is not instantaneous and takes time if we need to change value.
+
+Calling a function is instantaneous but still async function.
+
+Gas cost yellow paper for different opcode google for spreadsheet
+Gas price= ether value per unit gas
+Start gas/gas limit= total unit of gas that we are willing to spend for this transaction.
+If we use gas limit higher then required in transaction, the unused wei is returned back to us.
+Whoever is creating transaction has to pay gas price for it. This limit the application you can make in blockchain as no one want to use a twitter clone in blockchain to tweet by paying some amount of ether or write Facebook status paying some dollar.
+
+Remember 12 word mnemonic so you don’t have to remember account address, public and private key of multiple account you create. From same mnemonic you can create multiple many account address.
+Go to this website: iancoleman.io/bip39
+
+Use tool truffle for contract creation, local testing and deployment to public network. One stop shop. Sometime breaks so you make custom project like truffle. local test network created using ganache where we deploy byte code. Web3 is used for working with ABI interface. Web3 is portal to know what is going on local test network.
+Requiring web3 gives constructor function from which we create multiple web3 instance we can create for multiple network with different provider for each different network we have. Look image in instagram.
+3 types of providers
+
+Infura api to talk to infura node of rigby network for deploying our contract. Sign up infura. Infura api also have main network, for provider use truffle provider.
+In ganache local network we are given number of unlocked account addresses to work but for rinkeby network we need 12 word mnemonic to unlock and use for deploy in that network and we need free ether. In rigby we don’t have account already created in provider as in ganache local network.
+
+If you have contract address ie returned after you deploy contract, you can use remix to interact it without creating webpage for interaction.
+Moca to have test environments.
+Msg is global variable
+We do not have ability to pull nested dynamic array from solidity world to javascript world. Its limitation of bridge between two language.
+String inside solidity are represented as dynamic array so, if we create list of string, we cannot communicate that string to javascript side.
+require(true) function for validation.
+Use function modifier to not repeat code.
+Only way user to change data of network from website is the use of his private key signed to the data + cost them money too. Public and private keys only existed in user machine.
+Your server no longer part of data change or function call user make. Writing data of the server to the client.
+In etherium world when user try change data it don’t reach server.
+Storage vs memory hard drive vs ram variable vs argument. Permanent vs temporary
+
+We cannot iterate mapping.
+When we initialize(instantiate) properties of struct we only have to initialize value types not references types.
+If we have index value of array we don’t require for loop so don’t need mapping as it is constant time lookup.
+Can one contract make instance of another and deploy it. Used when we don’t have to pay for deployment and whoever deploys cannot change the code in contract. We can call it factory contract and we can also list all address of deployed contract from that factory as in 2nd application.
+Here we deploy factory contract and when user make transaction on that contract they pay for it plus new campaign contract is created and deployed by that factory contract already present on network.
+One already deployed contract deploys another contract.
+Kickstart clone.^^^
+Learn Fs-extra module
+Create benefit of using next as must user don’t have metamask so server side rendering is quit effective and we don’t have to use windows which is browser side rather use infura to connect rangy network.
+
+Steven said whenever we call a function that changes data it implements transaction and for transaction to implement we need to pay for it so do we need to assign payable to a function when they are going to be paid any way? Yes payable help to pay to code create not to miner only.
+
+
